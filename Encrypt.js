@@ -14,28 +14,27 @@ class Encrypt {
         'ufat': 'u'
     }
     static encrypt(text) {
-        let encryptedText = '';
+        let result = '';
+        const keys = Object.keys(this.encDictionary);
         for (let i = 0; i < text.length; i++) {
-            let char = text[i];
-            if (this.encDictionary[char]) {
-                encryptedText += this.encDictionary[char];
+            if (keys.includes(text[i])) {
+                result += this.encDictionary[text[i]];
             } else {
-                encryptedText += char;
+                result += text[i];
             }
         }
-        return encryptedText;
+        return result;
     }
 
     static decrypt(text) {
-        let decryptedText = '';
-        for (let i =0; i < text.length; i++) {
-            let char = text[i];
-            if (this.decDisctionary[char]) {
-                decryptedText += this.decDisctionary[char];
-            } else {
-                decryptedText += char;
-            }
+        let result = text.toLowerCase();
+        const keys = Object.keys(this.decDisctionary);
+        for (let i = 0; i < keys.length; i++) {
+            result = result.replace(keys[i], this.decDisctionary[keys[i]], 'g');
         }
-        return decryptedText;
+        result = result.replaceAll(' ', '')
+        return result;
     }
 }
+
+export default Encrypt;
