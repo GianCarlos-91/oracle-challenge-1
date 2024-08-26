@@ -7,14 +7,29 @@
   <link href='/style.css' rel='stylesheet'>
 </head>
 <body>
-  <div class="Inputcontainer">
-    <h1>Challenge 1</h1>
-    <textarea id="Input"></textarea>
-    <button id="Encrypt">Encryptar</button>
-    <button id="Decrypt">Desencriptar</button>
-  </div>
-  <div>
-    <textarea id="Output" readonly></textarea>
+  <div id="Page">
+    <div class="InputContainer">
+      <div class="Title">
+        <img src="./assets/Logo.png" alt="Logo" />
+        <h1>Challenge 1</h1>
+      </div>
+      <textarea id="Input" spellcheck="false" placeholder="Ingrese el texto aqui"></textarea>
+      <div class="Buttons">
+        <button id="Encrypt">Encryptar</button>
+        <button id="Decrypt">Desencriptar</button>
+      </div>
+    </div>
+    <div id="OutputContainer" data="off" copied="false">
+      <div id="off-message">
+        <img src="./assets/Muñeco.png" alt="Logo" />
+        <h2>Ningun mensaje fue encontrado</h2>
+        <p>ingrese el texto que desea encriptar o desencriptar</p>
+      </div>
+      <div id="on-message" copied="false">
+        <button id="Copy">Copiar</button>
+      </div>
+      <textarea id="Output" readonly></textarea>
+    </div>
   </div>
   <script type='module' src='/main.js'></script>
 </body>
