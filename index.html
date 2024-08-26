@@ -3,12 +3,19 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Hello World</title>
+  <title></title>
   <link href='/style.css' rel='stylesheet'>
 </head>
 <body>
-  <h1>Hello, world!</h1>
-  <button onclick="console.log('hello');">Press me</button>
-  <script defer type="text/javascript" src="/main.js"></script>
+  <div class="Inputcontainer">
+    <h1>Challenge 1</h1>
+    <textarea id="Input"></textarea>
+    <button id="Encrypt">Encryptar</button>
+    <button id="Decrypt">Desencriptar</button>
+  </div>
+  <div>
+    <textarea id="Output" readonly></textarea>
+  </div>
+  <script type='module' src='/main.js'></script>
 </body>
 </html>
