@@ -1,1 +1,134 @@
-/* Add styles here */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+#Page {
+    align-items: center;
+    justify-content: center;
+    background: #DDD;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    padding: 1em;
+}
+/* GENERAL */
+textarea {
+    font-family: monospace;
+    font-weight: 400;
+    line-height: 1.5;
+    border: none;
+    outline: none;
+    padding: 1em;
+}
+
+button {
+    cursor: pointer;
+    margin: 0.5em 0;
+    padding: 0.5em;
+    border-radius: 0.5em;
+    outline: none;
+    border: #0A3871 1px solid;
+}
+
+/*  INPUT CONTAINER */
+.InputContainer {
+    /* border: #000000 1px solid; */
+    display: flex;
+    flex: 0 0 auto;
+    flex-direction: column;
+    gap: 10px;
+    width: 60%;
+    min-width: 600px;
+    max-width: 800px;
+    /* padding: 1em; */
+}
+.InputContainer .Title {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+.InputContainer .Title img {
+    height: 2em;
+    width: 2em;
+    object-fit: cover;
+}
+.InputContainer .Title h1 {
+    text-align: center;
+}
+.InputContainer textarea {
+    resize: none;
+    width: 100%;
+    height: 100%;
+    min-height: 400px;
+    max-height: 600px;
+}
+.InputContainer .Buttons {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+.InputContainer .Buttons #Encrypt {
+    background: #0A3871;
+    color: #FFFFFF;
+}
+
+/*  OUTPUT CONTAINER */
+#OutputContainer {
+    position: relative;
+    flex: 0 0 auto;
+    /* border: #000000 1px solid; */
+    height: 100%;
+    min-width: 300px;
+    max-width: 400px;
+}
+#OutputContainer[data="on"] #on-message {
+    display: flex;
+}
+#OutputContainer[data="off"] #off-message {
+    display: flex;
+}
+#OutputContainer textarea {
+    resize: none;
+    width: 100%;
+    height: 100%;
+    cursor: copy;
+}
+#OutputContainer #off-message,
+#OutputContainer #on-message {
+    display: none;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    position: absolute;
+    padding: 1em;
+}
+#OutputContainer #on-message {
+    justify-content: end;
+}
+
+#OutputContainer #on-message button {
+    width: 100%;
+    transition: background 200ms ease-in-out;
+}
+#OutputContainer #on-message button[copied="true"] {
+    background: #4CAF50;
+    color: #FFFFFF;
+}
+#OutputContainer #off-message h2,
+#OutputContainer #off-message p {
+    text-align: center;
+}
+#OutputContainer #off-message img {
+    width: 80%;
+}
