@@ -6,7 +6,7 @@ class Encrypt {
         o: 'ober',
         u: 'ufat'
     }
-    static decDisctionary = {
+    static decDictionary = {
         'ai': 'a',
         'enter': 'e',
         'imes': 'i',
@@ -25,16 +25,14 @@ class Encrypt {
         }
         return result;
     }
-
     static decrypt(text) {
         let result = text.toLowerCase();
-        const keys = Object.keys(this.decDisctionary);
+        const keys = Object.keys(this.decDictionary);
         for (let i = 0; i < keys.length; i++) {
-            result = result.replace(keys[i], this.decDisctionary[keys[i]], 'g');
+            const regex = new RegExp(keys[i], 'g');
+            result = result.replace(regex, this.decDictionary[keys[i]]);
         }
-        result = result.replaceAll(' ', '')
         return result;
     }
 }
-
 export default Encrypt;
