@@ -7,7 +7,7 @@
 #Page {
     align-items: center;
     justify-content: center;
-    background: ##5499c7;
+    background: #5499c7;
     display: flex;
     flex-direction: row;
     gap: 10px;
